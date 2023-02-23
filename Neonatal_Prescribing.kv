@@ -1,0 +1,151 @@
+<Controller>:
+	
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'Luton and Dunstable'
+			font_size: '18sp'
+		Label:
+			text: 'Neonatal Infusions Calculator'
+			font_size: '22sp'
+			
+<controller5>:
+	babyweight:baby_weighs
+
+	BoxLayout:
+		orientation: 'horizontal'
+		Label:
+			text: 'Enter infant weight (Kg)'
+		TextInput:
+			id: baby_weighs
+			font_size: '25sp'
+			text: '0'
+			multiline: False
+			on_text: root.enter_baby_weight(*args)
+				
+<Controller2>:
+	lowrate:slideinput1
+	lowslide:lowslider
+	lowrateadvise:lower_infusion_rate_advise
+	highrateadvise:higher_infusion_rate_advise
+	
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: "Set lower infusion rate limit"
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				id: lower_infusion_rate_advise
+				text: "Minimum rate:"+'\n'+"0"
+				font_size: '10sp'
+			Slider:
+				id: lowslider
+				orientation: 'horizontal'
+				value_track: True
+				value_track_color: [1, 0, 0, 1]
+				on_value: root.move_slider1(*args)
+			Label:
+				id: higher_infusion_rate_advise
+				text: "Maximum rate:"+'\n'+"0"
+				font_size: '10sp'
+			TextInput:
+				id: slideinput1
+				text: '0'
+				multiline: False
+				on_text: root.enter_low_rate(*args)	
+				on_text_validate: root.user_hit_return(*args)
+
+<controller4>:			
+	highrate:slideinput2
+	highslide:highslider	
+	lowrateadvise:lower_infusion_rate_advise
+	highrateadvise:higher_infusion_rate_advise
+	
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: "Set upper infusion rate limit"
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				id: lower_infusion_rate_advise
+				text: "Minimum rate:"+'\n'+"0"
+				font_size: '10sp'
+			Slider:
+				id: highslider
+				orientation: 'horizontal'
+				value_track: True
+				value_track_color: [1, 0, 0, 1]
+				on_value: root.move_slider2(*args)
+			Label:
+				id: higher_infusion_rate_advise
+				text: "Maximum rate:"+'\n'+"0"
+				font_size: '10sp'
+			TextInput:
+				id: slideinput2
+				text: '0'
+				multiline: False
+				on_text: root.enter_high_rate(*args)
+				on_text_validate: root.user_hit_return(*args)
+				
+<Controller3>:
+
+    BoxLayout:
+        orientation: 'vertical'
+		Label: 
+			text: "This is where it will tell you what rate to deliver the infusion between. Then there will be notes about the infusion"
+			text_size: root.width, None
+			size: self.texture_size
+
+<controller6>:
+	outputtext1:output_text1
+	outputtext2:output_text2
+	
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			id: output_text1
+			text: 'Enter details above'
+			halign: 'center'
+			color:(0.3, 1, 0.3, 1)
+			font_size: '16sp'
+			text_size: root.width, None
+		Label:
+			id: output_text2
+			text: ''
+			font_size: '11sp'
+			valign: 'middle'
+			halign: 'center'
+			markup: True
+			shorten: False
+			color:(1,0.5,0.5,1)
+			text_size: root.width, None
+			
+			
+<controller7>:
+	descriptiontext1:description_text1
+	descriptiontext2:description_text2
+	
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			id: description_text1
+			text: 'About the Neonatal Prescribing Application'
+			valign: 'middle'
+			halign: 'center'
+			color:(1, 1, 1, 1)
+			font_size: '16sp'
+			text_size: root.width, None
+			size_hint:(1, 0.2)
+		Label:
+			id: description_text2
+			text: 'This application was developed by Dr Jack Pickard, trainee paediatrician, in collaboration with the Neonatal Unit at Luton and Dunstable NHS Foundation Trust, Hertfordshire, UK. It is meant for use by experienced healthcare professionals who are familiar with the drugs and dosages involved. Neither Jack Pickard nor Luton and Dunstable NHS Foundation Trust can be held responsible for any harm resulting from your use of this application.'+'\n'+'\n'+'If the rate selection text box turns orange this is an indication that the rate selected is high and should be used with caution.'+'\n'+'\n'+'The Luton and Dunstable Neonatal Prescribing Application is compatible with Guardrails ® infusion system. Neither Jack Pickard nor the Luton and Dunstable NHS Foundation Trust are affiliated with Guardrails ®.'+'\n'+'\n'+'A * indicates the recommended infusion strength. This is based upon the weight of the infant and gives a rough guide which may not be appropriate at the extremes of infusion rate.'+'\n'+'\n'+'If you have any comments or suggestions for how to improve this app, I would be very happy to hear from you at jackpickard1985@hotmail.com.'+'\n'+'\n'+'Copyright © Jack Pickard 2018'
+			font_size: '12sp'
+			valign: 'middle'
+			halign: 'center'
+			markup: True
+			shorten: False
+			color:(1,0.5,0.5,1)
+			text_size: root.width, None
+			size_hint:(1, 0.8)
