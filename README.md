@@ -1,5 +1,5 @@
 # Prescribing-app
-Android app with the Kivy GUI designed for drug dose calculation
+Android app with Kivy GUI designed for drug dose calculation
 
 This was produced for Luton and Dunstable NHS Foundation trust Neonatal Intensive Care department
 
