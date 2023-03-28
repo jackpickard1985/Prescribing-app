@@ -1,7 +1,7 @@
 # Prescribing-app
 Android app for safe drug dose calculation, Kivy GUI, produced in Linux
 
-This was produced for Luton and Dunstable NHS Foundation trust Neonatal Intensive Care department
+This was produced for Luton and Dunstable NHS Foundation trust Neonatal Intensive Care department, where it was in constant use for many years
 
 It provides drug dose calculations
 
